@@ -3,8 +3,8 @@
 
 <head>
   <!-- Required meta tags -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -31,7 +31,7 @@
 
   .signup-form {
     font-family: "Roboto", sans-serif;
-    width: 80%;
+    width: 90%;
     margin: 30px auto;
     background: linear-gradient(to right, #ebeecd 0%, #ebeecd 50%, #ebeecd 99%);
     border-radius: 10px;
@@ -163,7 +163,15 @@
     margin: 0 5px 0 10px;
   }
 
- 
+  select {
+    width: auto;
+    margin: 2px;
+    height: 30px;
+  }
+
+  select:focus {
+    height: 30px;
+  }
   .footer {
       
       left: 0;
@@ -174,6 +182,7 @@
       text-align: center;
     }
 </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -202,10 +211,12 @@
       </div>
     </div>
   </nav>
-  
+
+  <meta charset="utf-8">
   <title>Register Form</title>
   <!--<link rel="stylesheet" href="style.css">-->
 
+  <body>
     <form class="signup-form" action="/register" method="post">
       {% csrf_token %}
       <!-- form header -->
@@ -400,16 +411,16 @@
             </div>
           </div>
           <div class="form-group right">
-            <label for="experience" class="label-title">Transport<font color="red">*</font></label>
+            <label for="experience" class="label-title">Transport (Public/Private) <font color="red">*</font></label>
             <select name="trans">
-              <option>Private Transport</option>
-              <option>Public Transport</option>
+              <option>Private</option>
+              <option>Public</option>
             </select>
           </div>
         </div>
 
         <!-- Profile picture and Age -->
-        div class="horizontal-group">
+        <div class="horizontal-group">
           <div class="form-group center">
             <label for="experience" class="label-title">Age <font color="red">*</font></label>
             <input type="number" min="18" max="80" value="" class="form-input" name="age" required="required">
