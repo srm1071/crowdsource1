@@ -52,7 +52,16 @@
             width: 300px;
             height: 60px;
         }
+
+        #container {
+            position: relative;
+        }
+
+        #container img {
+            position: absolute;
+        }
     </style>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body style="background-color: #0e8288;">
@@ -63,10 +72,28 @@
     </div>
 
     <div class="main">
-        <img id="map" src="/static/map22_final.jpg" width=60%/>
+        <img id="map" src="/static/map22_final.jpg" width=60% />
+    </div>
+    <div id="divIntro" style="width:auto;display:none;">
+        <img src="/static/loc1.png" />
     </div>
 
+
     <script>
+        $(document).ready(function () {
+        $('#map').click(function (e) {
+            $('#divIntro')
+                .show()
+                //.text('At location - X: ' + e.pageX + ' Y:' + e.pageY)
+                //.text('P')
+                .css({ position: 'absolute', color: 'red', size: '100px', weight:'bold',
+                    left: e.pageX, top: e.pageY 
+            });
+        });
+    });
+
+
+
         function zoomin() {
             var myImg = document.getElementById("map");
             var currWidth = myImg.clientWidth;
@@ -84,6 +111,9 @@
                 myImg.style.width = (currWidth - 100) + "px";
             }
         }
+
+
+
     </script>
 </body>
 
